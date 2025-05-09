@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Targeting Lab</title>
+  <style>
+    :root {
+      --accent: #ff6b6b;
+      --bg: #f4f4f4;
+      --text: #2d2d2d;
+      --muted: #7f8c8d;
+      --primary: #1abc9c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 40px 20px;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 40px;
+    }
+
+    section {
+      background: white;
+      padding: 25px;
+      margin-bottom: 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+
+    section h2 {
+      border-left: 5px solid var(--accent);
+      padding-left: 15px;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    /* Profile Card Redesign */
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: #e3f6f5;
+      border-left: 8px solid var(--primary);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .profile-card h3 {
+      margin: 0;
+      color: var(--primary);
+    }
+
+    .profile-card p {
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .profile-card a {
+      font-weight: bold;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Navigation Menu Redesigned */
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav li a {
+      background-color: var(--primary);
+      padding: 10px 15px;
+      border-radius: 5px;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color 0.3s;
+    }
+
+    nav li:first-child a {
+      background-color: var(--accent);
+    }
+
+    nav a:hover {
+      background-color: #16a085;
+    }
+
+    /* Form Field Focus */
+    .styled-form input:not([type="submit"]) {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ccc;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    .styled-form input:focus {
+      border-color: var(--primary);
+      outline: none;
+      background-color: #ecfdf5;
+    }
+
+    .styled-form button {
+      background-color: var(--accent);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Pseudo-elements Fun */
+    .highlight-box h4::before {
+      content: "⚡ ";
+      color: var(--accent);
+    }
+
+    .highlight-box p::first-letter {
+      font-size: 1.5em;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .highlight-box p::after {
+      content: " ✔️";
+      color: green;
+    }
+
+    /* Advanced Blog Targeting */
+    .blog-articles article {
+      margin-bottom: 20px;
+      padding: 15px;
+      border-left: 5px solid transparent;
+      background: #fefefe;
+      border-radius: 5px;
+    }
+
+    .blog-articles article:nth-of-type(2) {
+      background-color: #fef3f3;
+      border-left-color: var(--accent);
+    }
+
+    .blog-articles article + article p {
+      color: var(--muted);
+    }
+
+    .blog-articles article h5 {
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Targeting Lab</h1>
+
+  <section>
+    <h2>Profile Card</h2>
+    <div class="profile-card">
+      <h3>Vrish Thadani</h3>
+      <p>UX & Front-end Developer from Mumbai</p>
+      <a href="#">Visit Portfolio</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Navigation Menu</h2>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Resume</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <section>
+    <h2>Interactive Form</h2>
+    <form class="styled-form">
+      <input type="text" placeholder="Enter your name" />
+      <input type="email" placeholder="Enter your email" />
+      <input type="password" placeholder="Password" />
+      <button type="submit">Sign Up</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Pseudo-elements in Action</h2>
+    <div class="highlight-box">
+      <h4>CSS Tip</h4>
+      <p>pseudo-elements add visual flavor without extra HTML.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Blog Styling with Selectors</h2>
+    <div class="blog-articles">
+      <article>
+        <h5>Blog Post One</h5>
+        <p>This is the first blog post styled normally.</p>
+      </article>
+      <article>
+        <h5>Blog Post Two</h5>
+        <p>This is the second post — with different background and styled text.</p>
+      </article>
+      <article>
+        <h5>Blog Post Three</h5>
+        <p>Sibling selector changes this paragraph’s color.</p>
+      </article>
+    </div>
+  </section>
+
+</body>
+</html>

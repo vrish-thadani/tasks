@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dev Handbook</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 30px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+      color: #2c3e50;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #1a237e;
+      text-shadow: 1px 1px #fff;
+    }
+
+    .accordion-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    details {
+      margin-bottom: 20px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(6px);
+      border: 1px solid #cfd8dc;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    details[open] {
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    summary {
+      padding: 18px 20px 18px 50px;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+      background: linear-gradient(to right, #cfd8dc, #e1f5fe);
+      color: #0d47a1;
+      font-size: 1.1rem;
+    }
+
+    summary::before {
+      content: "📘";
+      position: absolute;
+      left: 15px;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    details[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details > div {
+      padding: 20px;
+      animation: fadeIn 0.5s ease;
+      border-top: 1px solid #bbdefb;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    code {
+      background: #eceff1;
+      padding: 3px 6px;
+      border-radius: 5px;
+      font-family: Consolas, monospace;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      summary {
+        font-size: 1rem;
+        padding-left: 40px;
+      }
+
+      summary::before {
+        font-size: 1rem;
+        left: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎓 Student Dev Handbook</h1>
+  <div class="accordion-container">
+    
+    <details>
+      <summary>🌐 What is HTML?</summary>
+      <div>
+        <p><strong>HTML</strong> (HyperText Markup Language) structures content on the web. Tags like <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, and <code>&lt;a&gt;</code> define elements in a readable and organized format.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>🧩 What are Semantic Tags?</summary>
+      <div>
+        <p>Semantic HTML tags like <code>&lt;article&gt;</code> and <code>&lt;footer&gt;</code> clearly describe the role of content, improving SEO, accessibility, and code clarity.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>🆔 ID vs Class in CSS</summary>
+      <div>
+        <ul>
+          <li><strong>id</strong>: Unique identifier, used once per page (<code>#id</code> in CSS).</li>
+          <li><strong>class</strong>: Reusable, used for styling multiple elements (<code>.class</code> in CSS).</li>
+          <li>Elements can have multiple classes, but only one id.</li>
+          <li>id has higher specificity than class.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>📂 What is the &lt;summary&gt; Tag?</summary>
+      <div>
+        <p><code>&lt;summary&gt;</code> acts as a clickable heading for <code>&lt;details&gt;</code>, allowing collapsible sections like this one.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>🎨 What is CSS?</summary>
+      <div>
+        <p><strong>CSS</strong> (Cascading Style Sheets) defines how HTML elements appear. Three ways to apply:</p>
+        <ul>
+          <li><strong>Inline</strong>: via <code>style=""</code> attribute</li>
+          <li><strong>Internal</strong>: inside <code>&lt;style&gt;</code> tags</li>
+          <li><strong>External</strong>: linked .css file via <code>&lt;link&gt;</code></li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+</body>
+</html>
